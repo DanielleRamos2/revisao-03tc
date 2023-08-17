@@ -2,6 +2,14 @@ import { useState } from 'react'
 import './App.css'
 
 function App() {
+ const [usuario, setUsuario] = useState("")
+
+ function handleUsuario(evento) {
+  setUsuario(evento.target.value)
+ }
+
+ console.log(usuario)
+
   return (
     <>
       <header>
@@ -12,7 +20,12 @@ function App() {
         <form action="">
           <div> 
             <label htmlFor="usuario">Usuário</label>
-            <input  type="text" id='usuario' placeholder='Digite seu usuário'/>
+            <input  
+            type="text" 
+            id='usuario' 
+            placeholder='Digite seu usuário' 
+            onChange={handleUsuario}
+            />
           </div>
           <div>
             <label htmlFor="senha">Senha</label>
